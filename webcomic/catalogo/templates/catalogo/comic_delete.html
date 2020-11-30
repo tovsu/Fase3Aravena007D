@@ -54,13 +54,43 @@
     </style>
   </head>
   <body>
-    <h1> Eliminar Comic </h1>
-    <p>Eliminar Comic Definitivamente: {{Comic}} ?</p>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <input type="submit" action="" value="Yes, Eliminar"/>
-    </form>
-</body>
+    <div class="pt-4 col-12 card container"> 
+      <div>
+
+      <p class="pt-4 col-2 mx-auto">
+
+         El comic se Eliminara Permanentemente ¿continuar? 
+         {{comic.nombre_comic}}?
+        
+      </p>
+      </div>
+      
+      <div class="col-3  d-flex mx-auto">
+      
+        <form class="pr-2" 
+              action="." 
+              method="post" 
+              accept-charset="utf-8">
+          {% csrf_token %}
+      
+          <p>
+            <input 
+                    class="btn btn-dark" 
+                    type="submit" 
+                    value="Eliminar"
+          ></p>
+        </form>
+      
+          <p>
+            <a 
+                class="btn btn-success" 
+                href="{% url 'comics' %}">
+                regreso
+            </a>
+          </p>
+      </div>
+      </div>
+  </body>
 
 
 

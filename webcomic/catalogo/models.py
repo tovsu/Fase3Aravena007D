@@ -9,9 +9,15 @@ class comic(models.Model):
 	editorial = models.CharField     (max_length=21)
 	autor = models.CharField         (max_length=120)
 	cantidad = models.IntegerField   (default=0)
-	ingreso_fecha = models.DateField (null=True, blank=True)
+	id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+	
+	class meta:
+        ordering = ['nombre_comic']
+
+	def get_absolute_url(self):
+        return reverse('comic_especificacion', args=[str(self.id)])
 	
 	def _str_(self):
-		return self.codigo_comic
+		return self.nombre_comic
 
 

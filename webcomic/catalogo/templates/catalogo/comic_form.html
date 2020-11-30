@@ -54,14 +54,43 @@
     </style>
   </head>
   <body>
-    <h1>formulario a Completar: </h1>
-    <form action ="" method="post">
-        {%csrf_token%}
-        <table>
-            {{form.as_table}}
-        </table>
-        <input type="submit" value ="Enviar, formulario">
-    </form>
-  </body>
+    <div class="col-md"> 
+      <div class="card text-center"> 
+          <div class="card-body">
+    
+                  <div>
+                      <h1 class="pb-9">
+                        Ingresar un nuevo Comic
+                      </h1>
+                  </div>
+    
+              <form 
+                    class="col-6  text-warni"
+                    action="" 
+                    method="POST">
+    
+                  {%csrf_token%}
+                 
+                  <table>
+                    {{form|crispy}} 
+                  </table>
+
+                  <center>
+                    <button class="btn btn-warning">
+                      Ingresar
+                    </button>
+                  </center>
+
+              </form>
+          </div>
+      </div>     
+    </div> 
+  </body>    
+    
 
 </html>
+
+
+
+
+

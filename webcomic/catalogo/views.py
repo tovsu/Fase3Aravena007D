@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from . models import comic
 from django.views import generic
-
-# from . models import nombre_comic, codigo_comic, precio, editorial, autor, cantidad, ingreso_fecha
-
-
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
@@ -17,26 +13,25 @@ def index(request):
         'index.html',
         context={'num_comic': num_comic},   
     )
-
 def estante(request):
     
     return render (
         request,
         'estante.html',
-    )
-    
+    ) 
 def compra(request):
 
     return render (
         request,
         'compra.html',
     )
-
 def vendidos(request):
+    num_venta = comic.objects.all().count()
 
     return render (
         request,
         'vendidos.html',
+        context={'num_venta': num_venta},
     )
 
 class comicCreate(CreateView):
@@ -46,12 +41,10 @@ class comicCreate(CreateView):
 class comicUpdate(UpdateView):
     model = comic
     field = ['nombre_comic',
-             'codigo_comic',
              'precio',
              'editorial',
              'autor',
-             'cantidad',
-             'ingreso_fecha']
+             'cantidad',]
 
 class comicDelete(DeleteView):
     model = comic
@@ -62,5 +55,4 @@ class comicDetailView(generic.DetailView):
     
 class comicListView(generic.ListView):
     model = comic
-    paginate_by = 10
-
+    template_name = 10

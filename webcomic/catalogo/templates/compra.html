@@ -91,59 +91,99 @@
                           required: 'Ingrese nombre de editorial',
                           minlength: 'Cantidad de digitos insuficiente'
                       },
-                      autor:
-                      {
-                          required: 'Ingrese el nombre del autor valido',
-                          minlength: 'Cantidad de digitos insuficiente'
-                      },
+                      
                       cantidad:
                       {
                           required: 'Ingrese la cantidad de comic',
                           minlength: 'Cantidad de digitos insuficiente'
-                      },
-                      ingreso_fecha:
-                      {
-                          required: 'Ingrese fecha de compra',
-                          minlength: 'Cantidad de digitos insuficiente'
                       }
+                      
+                      
+                          
                   }
               }); 
           }); 
       
         </script>
     </head>
-
 <body>
-    <form id="mi-formulario" action="comprar.html"> 
+<div class="container-fluid slider d-flex align-items-center ">     
+  <div class="col-12 ">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-6 ml-auto pt-5">
+          <h1 class="text-white">FORMULARIO PARA REGISTRAR COMPRA DE COMIC</h1>
+      </div>
 
-        <label>Compra de comic Rainbow: </label>
+      <form id="COMIC RAINBOW " action="#"> <!--INICIO-->
 
-            <label>nombre del comic: </label>
-            <input type="text" name="nombre_comic" minlength="4" required>
+          <div class="form-group row col-6 ml-auto"> <!--COMIC NOMBRE-->
+              <input  
+                      type="text" 
+                      name="nombre_comic" 
+                      minlength="4" 
+                      required placeholder="Titulo del Comic" 
+                      class="form-control  col-md-8 col-sm-10 ml-auto">
+          </div> 
+          
+          <div class="form-group row col-6 pt-2 ml-auto"> <!--COMIC CODIGO-->
+              <input  
+                      type="text" 
+                      name="codigo_comic" 
+                      minlength="8" 
+                      required placeholder="Codigo del Comic" 
+                      class="form-control col-md-8 col-sm-10 ml-auto">
+          </div> 
 
-            <label>codigo del comic : </label>
-            <input type="text" name="cod_comic" minlength="7" required>
+          <div class="form-group row col-6 ml-auto"><!--COMIC PRECIO-->
+              <input  
+                      type="text" 
+                      name="precio" 
+                      minlength="4" 
+                      maxlength="7"  
+                      required placeholder="$10.000" 
+                      class="form-control col-md-8 col-sm-10 ml-auto ">
+          </div>
 
-            <label>precio: </label>
-            <input type="text" name="precio" minlength="4" required>
+          <div class="form-group row col-6 ml-auto"><!--COMIC EDITORIAL-->
+              <input 
+                      type="text" 
+                      name="editorial" 
+                      minlength="2" 
+                      required placeholder="Editorial del Comic" 
+                      class="form-control col-md-8 col-sm-10 ml-auto ">
+          </div>
 
-            <label>editorial: </label>
-            <input type="text" name="editorial" minlength="3" required>
 
-            <label>autor: </label>
-            <input type="text" name="autor" minlength="4" required>
+          <div class="form-group row col-6 ml-auto"><!--COMIC EDITORIAL-->
+            <input 
+                    type="text" 
+                    name="MARVEL" 
+                    minlength="2" 
+                    required placeholder="Editorial del Comic" 
+                    class="form-control col-md-8 col-sm-10 ml-auto ">
+        </div>
 
-            <label>cantidad : </label>
-            <input type="text" name="cantidad" minlength="2" required>
+        <div class="form-group row col-6 ml-auto"><!--COMIC CANTIDAD-->
+          <input 
+                  type="text" 
+                  name="cantidad" 
+                  minlength="2" 
+                  required placeholder=" cantidad de Comic" 
+                  class="form-control col-md-8 col-sm-10 ml-auto ">
+      </div>
 
-            <label>ingreso fecha: </label>
-            <input type="text" name="ingreso_fecha" minlength="4" required>
-
-         
-       
-        <button>Comprar</button>
-
+          <!--Formulario boton enviar-->
+          <div class="form-group row col-6 ml-auto pt-3 "> 
+              <button class="btn btn-dark ml-auto">COMPRAR</button>
+          </div>
+      </form> 
+  </div> 
+</div> 
 </body>
-
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+ 
 
 </html>
+
+{% endblock %}

@@ -53,15 +53,40 @@
 
     </style>
   </head>
-  <body>
-    
-  <h1>Comic: {{ Comic.codigo_comic }}</h1>
+  <div class="col-md"> 
+    <div class="card text-center"> 
+        <div class="card-body">
 
-  <p><strong>nombre_comic:</strong> {{ comic.nombre_comic }}</p> 
-  <p><strong>precio:</strong> {{ comic.precio }}</p> 
-  <p><strong>editorial</strong> {{ comic.editorial }}</p>  
-  <p><strong>autor:</strong> {{ comic.autor }}</p> 
-  <p><strong>cantidad:</strong> { comic.cantidad }}</p> 
-  <p><strong>ingreso_fecha:</strong> {{ comic.fecha_catalogo }}</p> 
-  </body>
+            <h1 class="card-title">{{comic.nombre_comic}}</h1>
+            <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item mx-auto">
+                  {{comic.codigo_comic}}
+                </li>
+
+                <li class="list-group-item mx-auto">
+                  {{comic.nombre_comic}}
+                </li>
+
+                <li class="list-group-item mx-auto">
+                  {{comic.editorial}}   
+                </li>
+
+                <li class="list-group-item mx-auto">
+                  {{comic.autor}}       
+                </li>
+                
+                <li class="list-group-item mx-auto">
+                  {{comci.cantidad}}    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+  </div>
+
+
+
+
 </html>
+{%endblock%}
